@@ -172,7 +172,14 @@ header > img{
 		width: 50px;
 	}
 }
-
+@media(max-width: 758px){
+	.bgwhite{
+		width: 30px;
+	}
+	header nav, header nav::after, header nav::before{	
+		width: 15px;	
+	}
+}
 
 /*-----------------About--------------------------------*/
 
@@ -565,6 +572,7 @@ margin-top: 70px;
 .emali--form--ation button{
 	margin-top: 20px;
 	width: 70%;
+	height: 38px;
 }
 }
 
