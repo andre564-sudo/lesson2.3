@@ -172,7 +172,7 @@ header > img{
 		width: 50px;
 	}
 }
-@media(max-width: 758px){
+@media(max-width: 516px){
 	.bgwhite{
 		width: 30px;
 	}
