@@ -664,10 +664,10 @@ margin-top: 70px;
   	background:#4C4F17;
   }
 
-  summary img{
+   summary img{
   	position: absolute;
   	right: 0;
-  	top: 10px;
+  	top: 10%;
   }
    details{
    	  	margin-bottom: 10px;
