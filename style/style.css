@@ -112,6 +112,7 @@ header > img{
 		opacity: 0;
 	}
 	.show{
+		z-index:100;
 		opacity: 1;
 	}
 	header nav ul{
@@ -175,7 +176,7 @@ header > img{
 @media(max-width: 516px){
 	.bgwhite{
 		top: 40px;
-		left: 47%;
+		left: 50%;
 	}
 	.bgwhite{
 		width: 18px;
