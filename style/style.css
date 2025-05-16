@@ -106,13 +106,13 @@ header > img{
 		left:40%;
 		width: 45px;
 		height: 45px;
-		z-index: 100;
+		z-index: 101;
 	}
 	.hide{
-		opacity: 0;
+		display: none;
 	}
 	.show{
-		opacity: 1;
+		display: block;
 
 	}
 	header nav ul{
@@ -125,20 +125,20 @@ header > img{
 		background: #344760;
 		height: 100vh;
 		transition: all 500ms line;
-		z-index: 100;
+		z-index: 102;
 		top:0;
 		left: 0;	
 		flex-direction: column;
 		justify-content: start;	
 		padding-top: 40px;
+		
 	}
 	header nav .heder--items li{
 		display: block;
 		margin: 10px auto;
 		text-align: center;
 	}
-
-	header nav, header nav::after, header nav::before{
+	header #burger, header #burger::after, header #burger::before{
 		content: ' ';
 		width: 30px;
 		height: 2px;
@@ -146,21 +146,23 @@ header > img{
 		border-radius: 10px;
 		
 	}
-	header nav::after, header nav::before{
+	header #burger::after, header #burger::before{
    		display: block;
    		position: relative;
+   		left: -6px;
  	 
 	}
-	header nav::after{
-		top: -6px;
+	header #burger::after{
+		top: -7px;
 	}
-	header nav::before{
-		top: 4px;
+	header #burger::before{
+		top: 3px;
 	}
-	header nav{
+	header #burger{
 		position: relative;
-		top: 50%;
+		top: 20%;
 		left: 20%;
+		border: 0;
 		
 	}
 	.bgwhite{
@@ -171,6 +173,10 @@ header > img{
 		border-radius: 50%;
 		height: 50px;
 		width: 50px;
+		z-index: 100;
+	}
+	#button--hide{
+		z-index: 200;
 	}
 }
 
@@ -878,10 +884,10 @@ margin-top: 70px;
   	border-bottom: 1px solid;
   	list-style: none;
   	position: relative;
-  	z-index: 50;
+  	z-index: 1;
 
   }details{
-  	z-index: 50;
+  	
   }
   @media{
   details > summary:hover{
