@@ -106,14 +106,14 @@ header > img{
 		left:40%;
 		width: 45px;
 		height: 45px;
-		z-index: 3;
+		z-index: 100;
 	}
 	.hide{
 		opacity: 0;
 	}
 	.show{
-		z-index:100;
 		opacity: 1;
+
 	}
 	header nav ul{
 		
@@ -125,7 +125,7 @@ header > img{
 		background: #344760;
 		height: 100vh;
 		transition: all 500ms line;
-		z-index: 2;
+		z-index: 100;
 		top:0;
 		left: 0;	
 		flex-direction: column;
@@ -173,10 +173,11 @@ header > img{
 		width: 50px;
 	}
 }
+
 @media(max-width: 516px){
 	.bgwhite{
 		top: 40px;
-		left: 50%;
+		left: 47%;
 	}
 	.bgwhite{
 		width: 18px;
@@ -187,7 +188,6 @@ header > img{
 		width: 10px;	
 	}
 }
-
 /*-----------------About--------------------------------*/
 
 
@@ -448,32 +448,206 @@ header > img{
 	justify-content: space-between;
 	padding-top: 100px;
 }
-.books--banner{
-	width: 50%;
-	padding: 20px;
-}
-.books--banner img	{
-	width: 100%;
 
+@import url('https://fonts.googleapis.com/css2?family=Alice&display=swap');
+
+:root{
+  --rotate-A: 0deg;
+  --rotate-B: 0deg;  
+  --rotate-C: 0deg;
+  --translate: 50%;
+  --z-index-A: 10;
+  --z-index-B: 5;  
+  --z-index-C: 1;
+  --cover-color: #E7D6D6;
+  --page-first-color: hsl(36, 48%, 80%);
+  --page-second-color: hsl(36, 48%, 70%);
+  --page-last-color: hsl(36, 48%, 25%);
 }
+
+
+.book-container {
+margin-left: -30%;
+  min-height: 50%;
+  width: 120vw;
+  display: grid;
+  place-content: center;
+  overflow: hidden;
+}
+
+.book--banner {
+	margin-left: -10%;
+  position: relative;
+  width: 25vw;
+  height: 35vw;
+  perspective: min(300vw, 3000px);
+}
+
+.page-container{
+  position: absolute;
+  height: inherit;
+  width: 100%;
+  cursor: pointer;
+  transition: .5s transform ease-in-out;
+  transform-style: preserve-3d;
+  transform-origin: left;  
+}
+
+.page-A{
+  transform: translate(var(--translate)) rotateY(var(--rotate-A));
+  z-index: var(--z-index-A);
+}
+
+.page-B{  
+  transform: translate(var(--translate)) rotateY(var(--rotate-B));
+  z-index: var(--z-index-B);
+}
+
+.page-C{  
+  transform: translate(var(--translate)) rotateY(var(--rotate-C));
+  z-index: var(--z-index-C);
+}
+
+.page{
+  position: absolute;
+  backface-visibility: hidden;
+  height: inherit;
+  width: inherit;
+}
+
+.front{  
+  border-radius: 5px 15px 15px 5px;
+}
+
+.back{
+  border-radius: 15px 5px 5px 15px;
+  transform: rotateY(180deg);
+}
+
+.page-A-front,
+.page-C-back{
+  background: var(--cover-color);
+  background-image: url('https://zupimages.net/up/21/47/zxra.png') ;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+    
+.page img{
+    width: 50%;
+    height: 25%;
+    display: block;
+    margin: 40px auto 0 auto;
+    border-radius: 10%;
+}
+
+.page-A-front{
+  font-family: 'Alice', serif;
+  color: #DE8080;
+  
+  *{
+    display: inline-block;
+    position: absolute;
+    text-align: center;
+  }
+  
+ h1{
+    font-size: 3.8vw;
+    display: inline-block;
+    position: absolute;
+    text-align: center;
+    top: 35%;
+    left: 50%;
+    text-shadow: 5px 2.5px 0 hsl(0deg, 0%, 0%, .25);
+    transform: translate(-50%, -50%);
+  }
+
+
+ h2{
+   
+    font-size: 1.3vw;
+    bottom: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+ h3{
+    font-size: 1vw;
+    font-style: italic;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+ .title--recipes {
+     text-align: center;
+     font-size: 18px;
+     margin: 10px 0 ;
+  }
+ .page ol{
+    margin:0;
+    padding-left: 10px;
+    padding-bottom: 10px;
+     width: 90%;
+    height: 25%;
+  }
+  .page ol li{
+  	line-height: 1.5vw;
+  	font-size: 1vw;
+    align-items: start;
+    display: flex;
+    justify-content: space-between;
+  }
+.page p{
+    line-height: 1.1vw;
+  	font-size: .7vw;
+  	padding: 10px;
+  }
+.page-A-back,
+.page-B-back{
+  background: linear-gradient(90deg, var(--page-first-color) 30%, var(--page-second-color), var(--page-last-color));
+}
+
+.page-B-front,
+.page-C-front{
+  background: linear-gradient(90deg, var(--page-last-color), var(--page-second-color), var(--page-first-color) 60%) ;
+}
+
+.page-A-back,
+.page-B,
+.page-C-front{  
+  line-height: min(24px, 2.4vw);
+  /*font-size: min(16px, 1.6vw);*/
+  p{
+    margin-bottom: min(5px, 0.5vw);
+  }
+  p::first-letter {
+    font-size: min(24px, 2.4vw);
+  }
+}
+
+/* signature */
+
+
+
 .books--text{
 	margin-bottom: 40px;
-	width: 50%;
+	width: 60%;
 }
 
 .books--text h3{
 text-transform: uppercase;
-font-size: 20px;
+font-size: 2vw;
 font-weight: 500;
 margin-top: 70px;
 }
 .books--text h2{
-	font-size: 48px;
+	font-size: 4vw;
 	font-weight: 800;
 
 }
 .books--text p {
-	font-size: 18px;
+	font-size: 1.8vw;
 	font-weight: 400;
 }
 .books--text button{
@@ -482,7 +656,46 @@ margin-top: 70px;
 }
 
 @media(max-width: 768px){
-	.books--banner, .books--text{
+
+.page-A-front{
+ 
+  
+ 
+ h1{
+    font-size: 5.8vw;
+    
+  }
+
+
+ h2{
+   
+    font-size: 2.9vw;
+
+  }
+  
+ h3{
+    font-size: 1.6vw;
+  }
+}
+
+	.book-container {
+  width: 120vw;
+
+}
+	.page-container{
+
+  width: 100%;
+  
+}
+
+.book--banner {
+
+  width: 40vw;
+  height: 60vw;
+
+}
+
+	 .books--text{
 		width: 100%;
 	}
 	.books {
@@ -565,10 +778,24 @@ margin-top: 70px;
 @media(max-width: 576px){
 	.email--form h2{
 	font-size: 30px;
-	margin-top: 50px;
+	margin-top: 20px;
 }
 
 
+	.email--form p, .email--form h3{
+	font-size: 12px;
+}
+.emali--form--ation{
+	flex-wrap: wrap;
+}
+
+.emali--form--ation button {
+	margin-top: 20px;
+	width: 70%;
+}
+.emali--form--ation input{
+	height: 18px;
+}
 	.email--form p, .email--form h3{
 	font-size: 12px;
 }
@@ -582,11 +809,7 @@ margin-top: 70px;
 	height: 18px;
 	font-size: 7px;
 }
-	.emali--form--ation input{
-	height: 18px;
 }
-}
-
 /*----------------------question-----------------------------------*/
 
 .question{
@@ -649,12 +872,16 @@ margin-top: 70px;
 }
 .question .frequently--questions summary{
 	padding-right: 40px;
+	margin-top: 10px;
 }
   details > summary{
   	border-bottom: 1px solid;
   	list-style: none;
   	position: relative;
+  	z-index: 50;
 
+  }details{
+  	z-index: 50;
   }
   @media{
   details > summary:hover{
@@ -665,7 +892,7 @@ margin-top: 70px;
   	background:#4C4F17;
   }
 
-   summary img{
+  summary img{
   	position: absolute;
   	right: 0;
   	top: 10%;
