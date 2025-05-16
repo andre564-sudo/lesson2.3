@@ -108,8 +108,64 @@
 		</div>
 
 		<div class="container books">
-			<div class="books--banner">
-				<img src="img/book-new2-min.png" alt="Book">
+			<div class ="book-container">
+			    <div class = "book--banner">
+			        
+			        <div class = "page-container page-A">
+			          <div class = "page front page-A-front">
+			            <h1>Cooking book </h1>
+			            <h3>A set of recipes</h3>
+			            
+			            <h2>by Toder Andrii</h2>
+			          </div>
+			          <div class = "page back page-A-back">
+			            <img src="img/borsh.jpg" alt="">
+			            <h2 class="title--recipes"> Name recipes</h2>
+			            <ol>
+			                <li><span class="ingredient">ingredient</span><span class="gr">100 g.</span></li>
+			                <li><span class="ingredient">ingredient</span><span class="gr">100 g.</span></li>
+			                <li><span class="ingredient">ingredient</span><span class="gr">100 g.</span></li>
+			                <li><span class="ingredient">ingredient</span><span class="gr">100 g.</span></li>
+			                <li><span class="ingredient">ingredient</span><span class="gr">100 g.</span></li>
+			                <li><span class="ingredient">ingredient</span><span class="gr">100 g.</span></li>
+			                <li><span class="ingredient">ingredient</span><span class="gr">100 g.</span></li>
+			                <li><span class="ingredient">ingredient</span><span class="gr">100 g.</span></li>
+			            </ol>
+			          </div>
+			        </div>
+			        
+			        <div class = "page-container page-B">
+			          <div class = "page front page-B-front">
+			             <h2 class="title--recipes">Recipes</h2>
+			             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt et dolorum accusantium soluta eos veritatis ipsa ex reiciendis nesciunt. Impedit modi dignissimos velit atque totam cum exercitationem voluptates ipsa voluptas in quo vitae distinctio voluptatem, tenetur ab culpa facilis? Itaque eos doloribus consequatur iste minima exercitationem provident quae beatae labore necessitatibus assumenda doloremque praesentium iure soluta nostrum expedita dolore, error facere, id porro animi ullam, ipsa officia! Enim cum praesentium optio quos. Debitis deleniti illo unde. Dolorem praesentium eius qui temporibus ea, inventore nulla harum hic suscipit. Sint, molestias quae voluptatum optio! Ipsam repellat consequuntur saepe, hic excepturi quo. Minima?</p>
+			          </div>
+			          <div class = "page back page-B-back">
+			            <img src="img/borsh.jpg" alt="">
+			            <h2 class="title--recipes"> Name recipes</h2>
+			            <ol>
+			                <li><span class="ingredient">ingredient</span><span class="gr">100 g.</span></li>
+			                <li><span class="ingredient">ingredient</span><span class="gr">100 g.</span></li>
+			                <li><span class="ingredient">ingredient</span><span class="gr">100 g.</span></li>
+			                <li><span class="ingredient">ingredient</span><span class="gr">100 g.</span></li>
+			                <li><span class="ingredient">ingredient</span><span class="gr">100 g.</span></li>
+			                <li><span class="ingredient">ingredient</span><span class="gr">100 g.</span></li>
+			                <li><span class="ingredient">ingredient</span><span class="gr">100 g.</span></li>
+			                <li><span class="ingredient">ingredient</span><span class="gr">100 g.</span></li>
+			            </ol>
+			          </div>
+			        </div>
+			        
+			        <div class = "page-container page-C">
+			          	<div class = "page front page-C-front">
+			            <h2 class="title--recipes">Recipes</h2>
+			             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt et dolorum accusantium soluta eos veritatis ipsa ex reiciendis nesciunt. Impedit modi dignissimos velit atque totam cum exercitationem voluptates ipsa voluptas in quo vitae distinctio voluptatem, tenetur ab culpa facilis? Itaque eos doloribus consequatur iste minima exercitationem provident quae beatae labore necessitatibus assumenda doloremque praesentium iure soluta nostrum expedita dolore, error facere, id porro animi ullam, ipsa officia! Enim cum praesentium optio quos. Debitis deleniti illo unde. Dolorem praesentium eius qui temporibus ea, inventore nulla harum hic suscipit. Sint, molestias quae voluptatum optio! Ipsam repellat consequuntur saepe, hic excepturi quo. Minima?</p>
+			          	</div>
+			       
+
+			       		<div class = "page back page-C-back">
+			        	</div> 
+			    	</div>
+			    </div>
 			</div>
 			<div class="books--text">
 				<h3>моя книга</h3>
@@ -211,21 +267,77 @@
 
 		</div>
 		<script>
-		function myfunction() {
-				var element =  document.getElementById("burger")
-				var elementButton =  document.getElementById("button--hide")
-				element.classList.toggle('hide')
-				elementButton.classList.toggle('hide')
- 				 
-			}
-		function	myfunctionClose()
-			 {
-				var element =  document.getElementById("burger")
-				var elementButton =  document.getElementById("button--hide")
-				element.classList.toggle('hide')
-				elementButton.classList.toggle('hide')
- 				 
-			}
+				function myfunction() {
+						var element =  document.getElementById("burger")
+						var elementButton =  document.getElementById("button--hide")
+						element.classList.toggle('hide')
+						elementButton.classList.toggle('hide')
+		 				 
+					}
+				function	myfunctionClose()
+					 {
+						var element =  document.getElementById("burger")
+						var elementButton =  document.getElementById("button--hide")
+						element.classList.toggle('hide')
+						elementButton.classList.toggle('hide')
+		 				 
+					}
+
+			           //forked by https://codepen.io/maxew33/pen/LYjKNVx
+				const pageAFront = document.querySelector('.page-A-front'),
+				      pageBFront = document.querySelector('.page-B-front'),
+				      pageABack = document.querySelector('.page-A-back'),
+				      pageBBack = document.querySelector('.page-B-back'),
+				      pageCFront = document.querySelector('.page-C-front'),
+				      pageCBack = document.querySelector('.page-C-back'),
+				      bookContainer = document.querySelector('.book-container')
+
+				let angle = '-180deg'
+
+				const pageOrientation = () =>{
+				   bookContainer.getBoundingClientRect().width > bookContainer.getBoundingClientRect().height ? angle = '-180deg' : angle = '180deg'
+				  console.log(angle)
+				}
+
+				pageOrientation()
+
+				pageAFront.addEventListener('click', () => {
+				  document.documentElement.style.setProperty('--rotate-A', angle)
+				  document.documentElement.style.setProperty('--translate', '100%')
+				})
+
+				pageBFront.addEventListener('click', () => {
+				  document.documentElement.style.setProperty('--rotate-B', angle)
+				  document.documentElement.style.setProperty('--z-index-A', '1')
+				})
+
+				pageCFront.addEventListener('click', () => {
+				  document.documentElement.style.setProperty('--rotate-C', angle)
+				  document.documentElement.style.setProperty('--translate', '150%')
+				  document.documentElement.style.setProperty('--z-index-C', '10')
+				})
+
+				pageABack.addEventListener('click', () => {
+				  document.documentElement.style.setProperty('--rotate-A', '0deg')
+				  document.documentElement.style.setProperty('--translate', '50%')
+				  document.documentElement.style.setProperty('--z-index-A', '10')
+				})
+
+				pageBBack.addEventListener('click', () => {
+				  document.documentElement.style.setProperty('--rotate-B', '0deg')
+				  document.documentElement.style.setProperty('--z-index-C', '1')
+				})
+
+
+				pageCBack.addEventListener('click', () => {
+				  document.documentElement.style.setProperty('--rotate-C', '0deg')
+				  document.documentElement.style.setProperty('--translate', '100%')
+				})
+
+				// Listen for resize changes
+				window.addEventListener("resize", function() {
+				  pageOrientation()
+				}, false);
 		</script>
 	</body>
 </html>
