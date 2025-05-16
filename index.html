@@ -20,16 +20,20 @@
 			</div>
 
 			<img class="hide" id="button--hide" onclick="myfunctionClose()" src="img/cross-mark-icon-isolated-3d-render-illustration.png"  alt="">
-			<div class="bgwhite">
-			<nav  onclick="myfunction()" >
-				<ul  id="burger" class=" heder--items hide">
+			<div class="bgwhite"  onclick="myfunction()"  id="burger2" >
+			<button id="burger" ></button>
+			</div>
+			<nav>
+				
+				<ul  id="menu" class=" heder--items hide">
 					
 					<li><a href="index.html">Дім</a></li>
 					<li><a href="#aboutMe">Про мене</a></li>
 					<li><a href="">Контакти</a></li>
 				</ul>
 			</nav>
-			</div>
+			
+
 			<button  class="btn heder--items">Записатися на прийом</button>
 		</header>
 
@@ -268,18 +272,24 @@
 		</div>
 		<script>
 				function myfunction() {
-						var element =  document.getElementById("burger")
-						var elementButton =  document.getElementById("button--hide")
+						var element =  document.getElementById("menu")
+						var elementButonOpen =  document.getElementById("burger2")
+						var elementButtonClose =  document.getElementById("button--hide")
+						
 						element.classList.toggle('hide')
-						elementButton.classList.toggle('hide')
+						elementButonOpen.classList.toggle('hide')
+						elementButtonClose.classList.toggle('hide')
 		 				 
 					}
 				function	myfunctionClose()
 					 {
-						var element =  document.getElementById("burger")
-						var elementButton =  document.getElementById("button--hide")
+					 	var element =  document.getElementById("menu")
+						var elementButonOpen =  document.getElementById("burger2")
+						var elementButtonClose =  document.getElementById("button--hide")
+						
 						element.classList.toggle('hide')
-						elementButton.classList.toggle('hide')
+						elementButonOpen.classList.toggle('hide')
+						elementButtonClose.classList.toggle('hide')
 		 				 
 					}
 
