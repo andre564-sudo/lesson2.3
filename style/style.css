@@ -189,9 +189,10 @@ header > img{
 }
 
 @media(max-width: 516px){
-.hide{
+	.hide{
 		display: none;
 	}
+
 	header #burger{
 		
 		top: 7px;
